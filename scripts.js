@@ -28,7 +28,6 @@ async function init() {
 
 //Increases the number on the page every given unit of time by a given value
 function tick() {
-    console.log(upgrade);
     counter.innerHTML = counterVal;
 
     validation();
