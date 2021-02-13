@@ -31,24 +31,25 @@ function tick() {
     counter.innerHTML = counterVal;
 
     validation();
-    counterVal++;
+    counterVal = counterVal + counterTick;
 }
 
 //Handles the button logic
 function upgrades() {
     /*
-    Make upgrade cost 250% of current number
-    Increase speed by 0.5% every upgrade
+    Make upgrade cost 160% of current number
+    Increase speed by 0.1% every upgrade
     Add the value of the upgrade cost at every tick
+    Increases tick by 1 every upgrade so lvl. 2 adds 2 per tick etc.
     */
     counterVal = counterVal - upgrade - 1;
     counter.innerHTML = counterVal;
 
-    upgrade = Math.ceil(upgrade * 2.5);
+    upgrade = Math.ceil(upgrade * 1.6);
     upgradeNum.innerHTML = upgrade;
 
-    counterTick = Math.ceil(counterTick * 2.5);
-    counterTime = counterTime - (counterTime * 0.5);
+    counterTick = counterTick + 1;
+    counterTime = counterTime - 0.1;
 
     validation();
 
